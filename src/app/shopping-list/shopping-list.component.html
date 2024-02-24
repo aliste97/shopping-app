@@ -1,25 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col card">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
       <app-add-item></app-add-item>
     </div>
-    <div class="col card">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+      <label class="form-label">Items added</label>
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let item of items; let i = index">
           <i class="bi bi-trash" style="cursor: pointer;" (click)="onDeleteItem (i)"></i>
-          {{ item.name }}
-          <span class="badge bg-secondary float-end">{{ item.quantity }}</span>
+          <span>{{ item.name }}</span>
+          <span class="badge bg-secondary float-end mt-0">{{ item.quantity }}</span>
         </li>
       </ul>
     </div>
   </div>
-    <!-- <ul class="list-group">
-      <li class="list-group-item" *ngFor="let item of items">
-        {{ item.name }}
-        <span class="badge bg-secondary float-end">{{ item.quantity }}</span>
-      </li>
-    </ul>
-    <div class="d-grid d-md-flex justify-content-md-end">
-      <button class="btn btn-primary">Add Item</button>
-    </div> -->
 </div>
