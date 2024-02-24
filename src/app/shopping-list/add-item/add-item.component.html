@@ -1,0 +1,12 @@
+<form #itemForm="ngForm" (ngSubmit)="onSubmit (itemForm)">
+    <div class="form-group mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" [ngClass]="{'is-valid': itemForm.value.name, 'is-invalid': !itemForm.value.name}" name="name" ngModel required aria-describedby="nameHelp">
+        <div id="nameHelp" class="form-text">Add a new item to Shopping list</div>
+    </div>
+    <div class="form-group mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantity</label>
+        <input type="number" class="form-control" [ngClass]="{'is-valid': itemForm.value.amount, 'is-invalid': !itemForm.value.amount}" name="amount" ngModel required>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!itemForm.valid">Add item</button>
+</form>
