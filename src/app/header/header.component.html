@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div *ngIf="!isAuthenticated" class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav">
+            <a class="nav-link" routerLink="/auth">Login</a>
+        </ul>
+    </div>
+    <div *ngIf="isAuthenticated" class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav">
+            <a class="nav-link" style="cursor: pointer;" routerLink="/shopping-list">Shopping list</a>
+        </ul>
+    </div>
+    <div *ngIf="isAuthenticated" class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav navbar-right">
+            <a class="nav-link" style="cursor: pointer;" (click)="onLogout ()">Logout</a>
+        </ul>
+    </div>
+</nav>

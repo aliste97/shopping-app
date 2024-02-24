@@ -20,5 +20,7 @@ export class AddItemComponent {
     this.shoppingListService.addItem (itemToAdd);
 
     this.dataStorageService.storeItem ();
+
+    itemForm.reset ();
   } // onSubmit 
 } // AddItemComponent
